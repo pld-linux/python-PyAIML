@@ -22,13 +22,14 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 PyAIML implements an interpreter for AIML, the Artificial Intelligence
-Markup Language developed by Dr. Richard Wallace of the A.L.I.C.E. Foundation.
-It can be used to implement a conversational AI program.
+Markup Language developed by Dr. Richard Wallace of the A.L.I.C.E.
+Foundation. It can be used to implement a conversational AI program.
 
 %description -l pl.UTF-8
-PyAIML jest implementacją interpretera języka AIML (Artificial Intelligence
-Markup Language), stworzonego przez Dr Richarda Wallace'a z Fundacji
-A.L.I.C.E. Może być użyty do stworzenia konwersacyjnego programu SI.
+PyAIML jest implementacją interpretera języka AIML (Artificial
+Intelligence Markup Language), stworzonego przez Dr Richarda Wallace'a
+z Fundacji A.L.I.C.E. Może być użyty do stworzenia konwersacyjnego
+programu SI.
 
 %prep
 %setup -q -n %{mod_package}-%{version} -T -b 0 -a 1

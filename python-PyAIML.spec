@@ -14,7 +14,7 @@ Source0:	http://dl.sourceforge.net/pyaiml/%{mod_package}-%{version}.tar.bz2
 Source1:	http://dl.sourceforge.net/pyaiml/%{aiml_package}.tar.bz2
 # Source1-md5:	bb3689854846e769d9000796e2c33587
 URL:		http://pyaiml.sourceforge.net/
-BuildRequires:	python-devel
+BuildRequires:	python-devel >= 1:2.5
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
 %pyrequires_eq	python-modules
@@ -32,7 +32,7 @@ z Fundacji A.L.I.C.E. Może być użyty do stworzenia konwersacyjnego
 programu SI.
 
 %prep
-%setup -q -n %{mod_package}-%{version} -T -b 0 -a 1
+%setup -q -n %{mod_package}-%{version} -a 1
 
 %build
 find -type f -exec sed -i -e 's|#!.*python.*|#!%{_bindir}/python|g' "{}" ";"
@@ -59,6 +59,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc README.txt CHANGES.txt SUPPORTED_TAGS.txt TODO.txt
 %dir %{py_sitescriptdir}/aiml
 %{py_sitescriptdir}/aiml/*.py[co]
+%{py_sitescriptdir}/PyAIML-*.egg-info
 %dir %{_datadir}/%{mod_package}
 %{_datadir}/%{mod_package}/*
 %dir %{_datadir}/aiml

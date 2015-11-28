@@ -36,7 +36,7 @@ programu SI.
 
 %build
 find -type f -exec sed -i -e 's|#!.*python.*|#!%{_bindir}/python|g' "{}" ";"
-python setup.py build
+%py_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -44,7 +44,7 @@ install -d $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_datadir}/%{mod_package}
 install -d $RPM_BUILD_ROOT%{_datadir}/aiml
 
-python ./setup.py install --optimize=2 --root=$RPM_BUILD_ROOT
+%py_install
 %py_postclean
 install $RPM_BUILD_ROOT%{_usr}/Lib/site-packages/aiml/self-test.aiml $RPM_BUILD_ROOT%{_datadir}/%{mod_package}
 mv standard $RPM_BUILD_ROOT%{_datadir}/aiml

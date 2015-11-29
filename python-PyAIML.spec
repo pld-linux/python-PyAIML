@@ -16,7 +16,7 @@ Source1:	http://dl.sourceforge.net/pyaiml/%{aiml_package}.tar.bz2
 URL:		http://pyaiml.sourceforge.net/
 BuildRequires:	python-devel >= 1:2.5
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.219
+BuildRequires:	rpmbuild(macros) >= 1.710
 %pyrequires_eq	python-modules
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
